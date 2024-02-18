@@ -6,8 +6,8 @@ const string dname[] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Satu
 const string zyname[] = {"Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"};
 int calThaiYear(int );
 string findwday(int ,int ,int );
-int findzaniaml(int ,int ,int );
-int findthmonth(int );
+int findmly(int ,int );
+int findmnotly(int ,int );
 int calZodiacAnimal(int ,int ,int );
 string findZYear(int ,int );
 
@@ -56,51 +56,108 @@ string findwday(int dd,int mm,int yy){
     }
 }
 
-int findzaniaml(int dd,int mm,int yy){
-    if(dd == 28 && mm == 11){
-        return yy+1;
-    }
-    else if(dd == 29 && mm == 11){
-        return yy+1;
-    }
-    else if(dd == 30 && mm == 11){
-        return yy+1;
-    }
-    else if(mm == 12){
-        return yy+1;
-    }
-    else{
-        return yy;
-    }
-
-}
-
-int findthmonth(int mm){
+int findmly(int dd,int mm){
     switch(mm){
         case 1:
-
+            if(dd >= 1 && dd <= 15) mm = 2;
+            if(dd > 15) mm = 3;
+            return mm;
         case 2:
-
+            if(dd >= 1 && dd <= 13) mm = 3;
+            if(dd > 13) mm = 4;
+            return mm;
         case 3:
-
+            if(dd >= 1 && dd <= 15) mm = 4;
+            if(dd > 15) mm = 5;
+            return mm;
         case 4:
-
+            if(dd >= 1 && dd <= 13) mm = 5;
+            if(dd > 13) mm = 6;
+            return mm;
         case 5:
-
+            if(dd >= 1 && dd <= 13) mm = 6;
+            if(dd > 13) mm = 7;
+            return mm;
         case 6:
-
+            if(dd >= 1 && dd <= 11) mm = 7;
+            if(dd > 11) mm = 8;
+            return mm;
         case 7:
-
+            mm = 8;
+            return mm;
         case 8:
-
+            if(dd >= 1 && dd <= 10) mm = 8;
+            if(dd > 10) mm = 9;
+            return mm;
         case 9:
-
+            if(dd >= 1 && dd <= 8) mm = 9;
+            if(dd > 8) mm = 10;
+            return mm;
         case 10:
-
+            if(dd >= 1 && dd <= 8) mm = 10;
+            if(dd > 8) mm = 11;
+            return mm;
         case 11:
-
+            if(dd >= 1 && dd <= 6) mm = 11;
+            if(dd > 6) mm = 12;
+            return mm;
         case 12:
+            if(dd >= 1 && dd <= 6) mm = 12;
+            if(dd > 25) mm = 1;
+            return mm;
+    }
+}
 
+int findmnotly(int dd,int mm){
+    switch(mm){
+        case 1:
+            if(dd >= 1 && dd <= 25) mm = 2;
+            if(dd > 25) mm = 3;
+            return mm;
+        case 2:
+            if(dd >= 1 && dd <= 23) mm = 3;
+            if(dd > 23) mm = 4;
+            return mm;
+        case 3:
+            if(dd >= 1 && dd <= 25) mm = 4;
+            if(dd > 25) mm = 5;
+            return mm;
+        case 4:
+            if(dd >= 1 && dd <= 23) mm = 5;
+            if(dd > 23) mm = 6;
+            return mm;
+        case 5:
+            if(dd >= 1 && dd <= 23) mm = 6;
+            if(dd > 23) mm = 7;
+            return mm;
+        case 6:
+            if(dd >= 1 && dd <= 22) mm = 7;
+            if(dd > 22) mm = 8;
+            return mm;
+        case 7:
+            if(dd >= 1 && dd <= 23) mm = 8;
+            if(dd > 23) mm = 9;
+            return mm;
+        case 8:
+            if(dd >= 1 && dd <= 22) mm = 9;
+            if(dd > 22) mm = 10;
+            return mm;
+        case 9:
+            if(dd >= 1 && dd <= 20) mm = 10;
+            if(dd > 20) mm = 11;
+            return mm;
+        case 10:
+            if(dd >= 1 && dd <= 19) mm = 11;
+            if(dd > 19) mm = 12;
+            return mm;
+        case 11:
+            if(dd >= 1 && dd <= 18) mm = 1;
+            if(dd > 18) mm = 12;
+            return mm;
+        case 12:
+            if(dd >= 1 && dd <15) mm = 1;
+            if(dd > 15) mm = 2;
+            return mm;
     }
 }
 
@@ -108,7 +165,7 @@ int calZodiacAnimal(int dd,int mm ,int yy){
     yy = yy%12;    
     switch(yy){
         case 0:
-            findzaniaml(dd,mm,yy);
+            
         case 1:
             
         case 2:
