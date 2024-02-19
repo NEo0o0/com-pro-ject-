@@ -6,10 +6,10 @@ const string dname[] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Satu
 const string zyname[] = {"Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"};
 int calThaiYear(int );
 string findwday(int ,int ,int );
+bool checkly(int );
 int findmly(int ,int );
 int findmnotly(int ,int );
-int calZodiacAnimal(int ,int ,int );
-string findZYear(int ,int );
+int calZodiacAnimal(int ,int ,int ,bool );
 
 int main(){
     int dd,mm,yy;
@@ -23,6 +23,7 @@ int main(){
     cin >> yy;
     calThaiYear(yy);
     cout << findwday(dd,mm,yy);
+    
 }
 
 int calThaiYear(int yy){
@@ -53,6 +54,22 @@ string findwday(int dd,int mm,int yy){
             return dname[5];
         case 6:
             return dname[6];
+    }
+}
+
+bool checkly(int yy){
+    if(yy%4 == 0){
+        if(yy%100 == 0){
+            if(yy%400 == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return true;
+        }
+    }else{
+        return false;
     }
 }
 
@@ -161,32 +178,214 @@ int findmnotly(int dd,int mm){
     }
 }
 
-int calZodiacAnimal(int dd,int mm ,int yy){
-    yy = yy%12;    
-    switch(yy){
+int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
+    int xx = yy%12;    
+    switch(xx){
         case 0:
-            
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 1:
-            
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 2:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 3:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 4:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 5:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 6:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 7:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 8:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 9:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 10:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    return yy+1;
+                }else{
+                    return yy;
+                }
+            }
         case 11:
-
+            ly = checkly(yy);
+            if(ly == true){
+                findmly(dd,mm);
+                if(mm == 1){
+                    yy = 0;
+                    return yy;
+                }else{
+                    return yy;
+                }
+            }else{
+                findmnotly(dd,mm);
+                if(mm == 1){
+                    yy = 0;
+                    return yy;
+                }else{
+                    return yy;
+                }
+            }
     }
 }
