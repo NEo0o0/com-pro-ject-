@@ -1,5 +1,4 @@
 #include <iostream>
-//#include "MyForm.h"
 #include<string>
 #include<cmath>
 using namespace std;
@@ -14,6 +13,11 @@ bool checkly(int );
 int findmly(int ,int );
 int findmnotly(int ,int );
 int calZodiacAnimal(int ,int ,int ,bool );
+int Atta,Hina,Tanang,Pita,Mata,Pohka,Matchima;
+int Tanu,Kadoompa,Sahutsha,Puntu,Puta,Hari,Pattani ;
+int Morrana,Supa,Kumma,Rapa,Payaya,Tasee,Tasa ;
+int calfirstnumber_M(int );
+int calfirstnumber_Y(int );
 
 int main(){
     int dd,mm,yy;
