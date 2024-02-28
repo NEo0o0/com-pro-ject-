@@ -5,17 +5,15 @@
 using namespace std;
 const string dname[] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 const string zyname[] = {"Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"};
+int frnum[7] = {};
+int srnum[7] = {};
+int trnum[7] = {};
 int calThaiYear(int );
 string findwday(int ,int ,int );
 bool checkly(int );
 int findmly(int ,int );
 int findmnotly(int ,int );
 int calZodiacAnimal(int ,int ,int ,bool );
-int Atta,Hina,Tanang,Pita,Mata,Pohka,Matchima;
-int Tanu,Kadoompa,Sahutsha,Puntu,Puta,Hari,Pattani ;
-int Morrana,Supa,Kumma,Rapa,Payaya,Tasee,Tasa ;
-int calfirstnumber_M(int );
-int calfirstnumber_Y(int );
 
 int main(){
     int dd,mm,yy;
@@ -505,6 +503,60 @@ int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
             }
     }
 }
+
+int calfnum(int dd,int num[7]){
+    switch(dd){
+        case 1:
+            for(int i = 0;i < 7;i++){
+                num[i] = i+1;
+            }
+            break;
+        case 2:
+            for(int i = 0;i < 6;i++){
+                num[i] = i+2;
+            }
+            num[6] = 1;
+            break;
+        case 3:
+            for(int i = 0;i < 5;i++){
+                num[i] = i+3;
+            }
+            for(int j = 0;j < 2;j++){
+                num[5+j] = j+1;
+            }
+            break;
+        case 4:
+            for(int i = 0;i < 4;i++){
+                num[i] = i+4;
+            }
+            for(int j = 0;j < 3;j++){
+                num[4+j] = j+1;
+            }
+            break;
+        case 5:
+            for(int i = 0;i < 3;i++){
+                num[i] = i+5;
+            }
+            for(int j = 0;j < 4;j++){
+                num[3+j] = j+1;
+            }
+            break;
+        case 6:
+            for(int i = 0;i < 2;i++){
+                num[i] = i+6;
+            }
+            for(int j = 0;j < 5;j++){
+                num[2+j] = j+1;
+            }
+            break;
+        case 7:
+            num[0] = 7;
+            for(int i = 0;i < 6;i++){
+                num[1+i] = i+1;
+            }            
+    }
+}
+
 
 int calfirstnumber_M(int m){
     if(m == 1 || m == 8){
