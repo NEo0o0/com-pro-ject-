@@ -4,12 +4,14 @@
 using namespace std;
 const string dname[] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 const string zyname[] = {"Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"};
-int frnum[7] = {};
-int srnum[7] = {};
-int trnum[7] = {};
+int calThaiYear(int &);
+
 int calThaiYear(int &);
 string findwday(int ,int ,int );
 bool checkly(int );
+int findmly(int ,int &);
+int findmnotly(int ,int &);
+int calZodiacAnimal(int ,int ,int &,bool );
 int findmly(int ,int );
 int findmnotly(int ,int );
 int calZodiacAnimal(int);
@@ -18,6 +20,8 @@ int Tanu,Kadoompa,Sahutsha,Puntu,Puta,Hari,Pattani;
 int Morrana,Supa,Kumma,Rapa,Payaya,Tasee,Tasa;
 int calfirstnumber_M(int );
 int calfirstnumber_Y(int );
+
+
 
 int calThaiYear(int &yy){
     yy += 543;
@@ -115,7 +119,7 @@ bool checkly(int yy){
     }
 }
 
-int findmly(int dd,int mm){
+int findmly(int dd,int &mm){
     switch(mm){
         case 1:
             if(dd >= 1 && dd <= 15){
@@ -220,7 +224,7 @@ int findmly(int dd,int mm){
     }
 }
 
-int findmnotly(int dd,int mm){
+int findmnotly(int dd,int &mm){
     switch(mm){
         case 1:
             if(dd >= 1 && dd <= 25) mm = 2;
@@ -302,7 +306,7 @@ int calZodiacAnimal(int yy){
     }
 }
 
-/*int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
+/*int calZodiacAnimal(int dd,int mm ,int &yy,bool ly){
     int xx = yy;
     yy = yy%12;    
     switch(yy){
@@ -700,6 +704,7 @@ int calfirstnumber_Y(int y){
     }
    
 }
+
 
 int main(){
     int dd,mm,yy;
