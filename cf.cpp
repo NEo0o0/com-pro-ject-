@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 #include<string>
 #include<cmath>
 using namespace std;
@@ -7,41 +7,19 @@ const string zyname[] = {"Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","G
 int frnum[7] = {};
 int srnum[7] = {};
 int trnum[7] = {};
-int calThaiYear(int );
+int calThaiYear(int &);
 string findwday(int ,int ,int );
 bool checkly(int );
 int findmly(int ,int );
 int findmnotly(int ,int );
-int calZodiacAnimal(int ,int ,int ,bool );
+int calZodiacAnimal(int);
 int Atta,Hina,Tanang,Pita,Mata,Pohka,Matchima;
-int Tanu,Kadoompa,Sahutsha,Puntu,Puta,Hari,Pattani ;
-int Morrana,Supa,Kumma,Rapa,Payaya,Tasee,Tasa ;
+int Tanu,Kadoompa,Sahutsha,Puntu,Puta,Hari,Pattani;
+int Morrana,Supa,Kumma,Rapa,Payaya,Tasee,Tasa;
 int calfirstnumber_M(int );
 int calfirstnumber_Y(int );
 
-int main(){
-    int dd,mm,yy;
-    
-    bool ly = checkly;
-    cout << "What is your date of birth ?"<< " ";
-    cout << "(Answer day, month and year in AD)\n";
-    cout << "Day: ";
-    cin >> dd;
-    cout << "Month: ";
-    cin >> mm;
-    cout << "Year: ";
-    cin >> yy;
-    calThaiYear(yy);
-    cout << findwday(dd,mm,yy);
-    if(checkly){
-        cout << findmly(dd ,mm );
-    }else{
-        cout << findmnotly(dd ,mm );
-    }
-    cout << zyname[calZodiacAnimal(dd,mm,yy,ly)];
-}
-
-int calThaiYear(int yy){
+int calThaiYear(int &yy){
     yy += 543;
     return yy;
 }
@@ -295,7 +273,36 @@ int findmnotly(int dd,int mm){
     }
 }
 
-int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
+int calZodiacAnimal(int yy){
+    switch(yy%12){
+        case 0:
+            return 5;
+        case 1:
+            return 6;
+        case 2:
+            return 7;
+        case 3:
+            return 8;
+        case 4:
+            return 9;
+        case 5:
+            return 10;
+        case 6:
+            return 11;
+        case 7:
+            return 0;
+        case 8:
+            return 1;
+        case 9:
+            return 2;
+        case 10:
+            return 3;
+        case 11:
+            return 4;
+    }
+}
+
+/*int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
     int xx = yy;
     yy = yy%12;    
     switch(yy){
@@ -506,7 +513,7 @@ int calZodiacAnimal(int dd,int mm ,int yy,bool ly){
                 }
             }
     }
-}
+}*/
 
 int calfnum(int dd,int num[7]){
     switch(dd){
@@ -560,7 +567,6 @@ int calfnum(int dd,int num[7]){
             }            
     }
 }
-
 
 int calfirstnumber_M(int m){
     if(m == 1 || m == 8){
@@ -693,4 +699,36 @@ int calfirstnumber_Y(int y){
         Tasa    = 6 ;
     }
    
+}
+
+int main(){
+    int dd,mm,yy;
+    
+    bool ly = checkly;
+    cout << "What is your date of birth ?"<< " ";
+    cout << "(Answer day, month and year in AD)\n";
+    cout << "Day: ";
+    cin >> dd;
+    cout << "Month: ";
+    cin >> mm;
+    cout << "Year: ";
+    cin >> yy;
+    
+    cout << findwday(dd,mm,yy);
+    if(checkly){
+        cout << findmly(dd ,mm );
+    }else{
+        cout << findmnotly(dd ,mm );
+    }
+    calThaiYear(yy);
+    cout << zyname[calZodiacAnimal(yy)];
+    calfirstnumber_M(mm) ;
+    calfirstnumber_Y(calZodiacAnimal(yy)) ;
+
+    cout << endl << Atta <<Hina << Tanang << Pita << Mata << Pohka << Matchima << endl;
+    cout << Tanu << Kadoompa << Sahutsha << Puntu << Puta << Hari << Pattani << endl;
+    cout << Morrana <<Supa << Kumma << Rapa << Payaya << Tasee << Tasa << endl;
+    cout << dd << mm << yy;
+
+    return 0;
 }
